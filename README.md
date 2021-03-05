@@ -42,7 +42,8 @@ In our game board, the player character is always denoted by the ‘@’ symbol.
 Enemies are the mortal foes of our illustrious player character. In a traditional rogue-like, the enemy character would have some degree of artificial intelligence. However, for simplicity in CC3k, enemies, except for dragons, move one square randomly within the confines of the chamber they were spawned in. Dragons are stationary and always guard a treasure hoard.
 
 Enemies can be one of human (140 HP, 20 Atk, 20 Def, drops 2 normal piles of gold), dwarf (100 HP, 20 Atk, 30 Def, Vampires are allergic to dwarves and lose 5HP rather than gain), elf (140 HP, 30 Atk, 10 Def, gets two attacks against every race except drow), orcs (180 HP, 30 Atk, 25 Def, does 50% more damage to goblins), merchant (30 HP, 70 Atk, 5 Def), dragon (150 HP, 20 Atk, 20 Def, always guards a treasure hoard), and halfling (100 HP, 15 Atk, 20 Def, has a 50% chance to cause the player character to miss in combat, i.e. takes priority over player character’s ability to never miss).
-By default, merchants are neutral to all parties5. However, merchants can be attacked and slain by the player character. Attacking or slaying a Merchant will cause every Merchant from that point forward to become hostile to the player character for the rest of the game even on future floors (and will attack them if they pass within a one block radius).
+
+By default, merchants are neutral to all parties. However, merchants can be attacked and slain by the player character. Attacking or slaying a Merchant will cause every Merchant from that point forward to become hostile to the player character for the rest of the game even on future floors (and will attack them if they pass within a one block radius).
 
 Dragons always spawn in a one block radius of its dragon hoard(see Treasure). That is, if a dragon hoard is spawned then a dragon is spawned.
 Upon their demise, any enemy that is not a dragon, human, or merchant will drop either a small pile or normal pile of gold (discussed below). This gold is immediately added to the player character’s total.
@@ -53,7 +54,7 @@ Enemies are denoted on the map as follows: (H)uman, d(W)arf, (E)lf, (O)rc, (M)er
 
 ### 2.3 Items
 ### 2.3.1 Potions
-In the game of CC3k, there is only one type of usable item: a potion. Potions are of two types: positive and negative. Potions can provide the player character with positive and negative bonuses as outlined below. Regardless of the potion itself, all potions are denoted on the map with a P. A player may not hold any potions6. Accordingly, a potion cannot be used unless a player is standing within a 1 block radius of it.
+In the game of CC3k, there is only one type of usable item: a potion. Potions are of two types: positive and negative. Potions can provide the player character with positive and negative bonuses as outlined below. Regardless of the potion itself, all potions are denoted on the map with a P. A player may not hold any potions. Accordingly, a potion cannot be used unless a player is standing within a 1 block radius of it.
 
 The effects of a particular potion are not known until it is used for the first time, e.g. the player character will not know what a potion does until they use it for the first time in a session. However, they will only learn about the effects of that particular potion. Other potions will not have their effects revealed. The exception is for potions purchased from the Merchant7, which should have have their abilities displayed.
 
