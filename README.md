@@ -136,5 +136,5 @@ A player’s score is only generated in the first of above two cases. Score is d
 ## 6. Command Line options
 The program should have the ability to process an optional single command line argument: the name of a file that specifies the layout of each of the 5 floors. This is specified by giving the exact floor layout as is presented to the player. Essentially, any diagram presented in this document (minus the text information in the last 5 rows). Note that potions and piles of gold will be denoted by numbers (outlined below) but should be converted to the appropriate character when displayed to the player.
 
-The translation of numbers to items is as follows: 0-RH,1-BA,2-BD,3-PH,4-WA,5-WD,6- normal gold pile, 7 - small hoard, 8 - merchant hoard, 9 - dragon hoard.
+The translation of numbers to items is as follows: 0-RH, 1-BA, 2-BD, 3-PH, 4-WA, 5-WD, 6-normal gold pile, 7-small hoard, 8-merchant hoard, 9-dragon hoard.
 
