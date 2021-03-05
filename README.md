@@ -125,6 +125,10 @@ Damage is calculated as follows: Damage(Def ender) = ceiling((100/(100+Def (Def 
 Walls are denoted by ‘|’ and ‘−’, doorways by ‘+’, and passages by ‘#’. Floor tiles that can be walked upon are denoted by ‘.’. Chambers are denoted by the smaller polygons inside the larger rectangle. The player character can only ever occupy a passage block, doorway block, or a floor tile inside a chamber. The player character can see in all chambers simultaneously.
 
 ![Figure1](/Figures/figure1.png)
+![Figure2](/Figures/figure2.png)
+![Figure3](/Figures/figure3.png)
+![Figure4](/Figures/figure4.png)
+![Figure5](/Figures/figure5.png)
 
 ## 4. Command Interpreter
 Initially, the game will demand the player enter one of the specified races or quit. Entering ‘q’ or EOF (e.g. Ctrl-D) at the race prompt will cause the program to terminate. Supplying a valid race selection (below) will start that game using that race. Other values will be ignored.
