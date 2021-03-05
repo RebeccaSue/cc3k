@@ -81,7 +81,7 @@ The effects of a particular potion are not known until it is used for the first 
 **Positive Potions**:
 
 | Potion | Effect|
-| ------------- |-------------| -----|-----| ----|
+| ------------- |-------------| 
 |Restore health (RH)| restore up to 10 HP (cannot exceed maximum prescribed by race)|
 |Boost Atk (BA)| increase Atk by 5|
 |Boost Def (BD)| increase Def by 5|
@@ -89,7 +89,7 @@ The effects of a particular potion are not known until it is used for the first 
 **Negative Potions**:
 
 | Potion | Effect|
-| ------------- |-------------| -----|-----| ----|
+| ------------- |-------------| 
 |Poison health (PH)| lose up to 10 HP (cannot fall below 0 HP) |
 | Wound Atk (WA)| decrease Atk by 5|
 |Wound Def (WD)| decrease Def by 5|
