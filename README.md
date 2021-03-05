@@ -1,5 +1,5 @@
 # ChamberCrawler3000
- The game of ChamberCrawler 3000 (cc3k) is a simplified [rogue-like](https://en.wikipedia.org/wiki/Rogue). 
+ The game of ChamberCrawler 3000 (CC3K) is a simplified [rogue-like](https://en.wikipedia.org/wiki/Rogue). 
 
 A game of CC3k consists of a board 79 columns wide and 30 rows high (5 rows are reserved for displaying information). Game play is as follows: the player character moves through a dungeon and slays enemies and collects treasure until reaching the end of the dungeon (where the end of the dungeon is the 5th floor). A dungeon consists of different floors that consist of chambers connected with passages. In our simplification, each floor will always consist of the same 5 chambers connected in exactly the same way (outlined below).
 
@@ -34,14 +34,26 @@ Definition 10: A **1 block radius** denotes the 8 cells adjacent to the characte
 The major components of the system are as follows:
 
 ### 2.1 Player Character
-The default player character race is a shade4 that has starting stats (125 HP, 25 Atk, 25 Def). However, players have the option of choosing an alternate (but no less heroic) race: drow (150 HP, 25 Atk , 15 Def, all potions have their effect magnified by 1.5), vampire (50 HP, 25 Atk, 25 Def, gains 5 HP every successful attack and has no maximum HP), troll (120 HP, 25 Atk, 15 Def, regains 5 HP every turn; HP is capped at 120 HP), and goblin (110 HP, 15 Atk, 20 Def, steals 5 gold from every slain enemy). Max HP for all races is the starting HP, except for vampire which has no max.
+The default player character race is a shade that has starting stats (125 HP, 25 Atk, 25 Def). However, players have the option of choosing an alternate (but no less heroic) race: 
+* drow (150 HP, 25 Atk , 15 Def, all potions have their effect magnified by 1.5), 
+* vampire (50 HP, 25 Atk, 25 Def, gains 5 HP every successful attack and has no maximum HP), 
+* troll (120 HP, 25 Atk, 15 Def, regains 5 HP every turn; HP is capped at 120 HP), and 
+* goblin (110 HP, 15 Atk, 20 Def, steals 5 gold from every slain enemy). 
+
+Max HP for all races is the starting HP, except for vampire which has no max.
 In our game board, the player character is always denoted by the ‘@’ symbol.
 
 
 ### 2.2 Enemies
 Enemies are the mortal foes of our illustrious player character. In a traditional rogue-like, the enemy character would have some degree of artificial intelligence. However, for simplicity in CC3k, enemies, except for dragons, move one square randomly within the confines of the chamber they were spawned in. Dragons are stationary and always guard a treasure hoard.
 
-Enemies can be one of human (140 HP, 20 Atk, 20 Def, drops 2 normal piles of gold), dwarf (100 HP, 20 Atk, 30 Def, Vampires are allergic to dwarves and lose 5HP rather than gain), elf (140 HP, 30 Atk, 10 Def, gets two attacks against every race except drow), orcs (180 HP, 30 Atk, 25 Def, does 50% more damage to goblins), merchant (30 HP, 70 Atk, 5 Def), dragon (150 HP, 20 Atk, 20 Def, always guards a treasure hoard), and halfling (100 HP, 15 Atk, 20 Def, has a 50% chance to cause the player character to miss in combat, i.e. takes priority over player character’s ability to never miss).
+Enemies can be one of: 
+* human (140 HP, 20 Atk, 20 Def, drops 2 normal piles of gold), dwarf (100 HP, 20 Atk, 30 Def,
+* vampires are allergic to dwarves and lose 5HP rather than gain), 
+* elf (140 HP, 30 Atk, 10 Def, gets two attacks against every race except drow),
+* orcs (180 HP, 30 Atk, 25 Def, does 50% more damage to goblins), 
+* merchant (30 HP, 70 Atk, 5 Def), dragon (150 HP, 20 Atk, 20 Def, always guards a treasure hoard), 
+* and halfling (100 HP, 15 Atk, 20 Def, has a 50% chance to cause the player character to miss in combat, i.e. takes priority over player character’s ability to never miss).
 
 By default, merchants are neutral to all parties. However, merchants can be attacked and slain by the player character. Attacking or slaying a Merchant will cause every Merchant from that point forward to become hostile to the player character for the rest of the game even on future floors (and will attack them if they pass within a one block radius).
 
