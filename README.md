@@ -79,14 +79,20 @@ In the game of CC3k, there is only one type of usable item: a potion. Potions ar
 The effects of a particular potion are not known until it is used for the first time, e.g. the player character will not know what a potion does until they use it for the first time in a session. However, they will only learn about the effects of that particular potion. Other potions will not have their effects revealed. The exception is for potions purchased from the Merchant7, which should have have their abilities displayed.
 
 **Positive Potions**:
-* Restore health (RH): restore up to 10 HP (cannot exceed maximum prescribed by race)
-* Boost Atk (BA): increase Atk by 5
-* Boost Def (BD): increase Def by 5
+
+| Potion | Effect|
+| ------------- |-------------| -----|-----| ----|
+|Restore health (RH)| restore up to 10 HP (cannot exceed maximum prescribed by race)|
+|Boost Atk (BA)| increase Atk by 5|
+|Boost Def (BD)| increase Def by 5|
 
 **Negative Potions**:
-* Poison health (PH): lose up to 10 HP (cannot fall below 0 HP) 
-* Wound Atk (WA): decrease Atk by 5
-* Wound Def (WD): decrease Def by 5
+
+| Potion | Effect|
+| ------------- |-------------| -----|-----| ----|
+|Poison health (PH)| lose up to 10 HP (cannot fall below 0 HP) |
+| Wound Atk (WA)| decrease Atk by 5|
+|Wound Def (WD)| decrease Def by 5|
 
 The effects of RH and PH are permanent while the effects of all other potions are limited to the floor they are used on. For example, using a BA potion will only boost the player character’s Atk until the beginning of the next floor.
 
