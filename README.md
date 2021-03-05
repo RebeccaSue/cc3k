@@ -1,6 +1,9 @@
 # ChamberCrawler3000
  The game of ChamberCrawler 3000 (CC3K) is a simplified [rogue-like](https://en.wikipedia.org/wiki/Rogue). 
 
+
+## 1. Introduction
+
 A game of CC3k consists of a board 79 columns wide and 30 rows high (5 rows are reserved for displaying information). Game play is as follows: the player character moves through a dungeon and slays enemies and collects treasure until reaching the end of the dungeon (where the end of the dungeon is the 5th floor). A dungeon consists of different floors that consist of chambers connected with passages. In our simplification, each floor will always consist of the same 5 chambers connected in exactly the same way (outlined below).
 
 CC3k differs from other rogue-likes in a significant way: it does not update the terminal/window in real-time but rather redraws all elements every turn.
@@ -34,13 +37,16 @@ Definition 10: A **1 block radius** denotes the 8 cells adjacent to the characte
 The major components of the system are as follows:
 
 ### 2.1 Player Character
-The default player character race is a shade that has starting stats (125 HP, 25 Atk, 25 Def). However, players have the option of choosing an alternate (but no less heroic) race: 
-* drow (150 HP, 25 Atk , 15 Def, all potions have their effect magnified by 1.5), 
-* vampire (50 HP, 25 Atk, 25 Def, gains 5 HP every successful attack and has no maximum HP), 
-* troll (120 HP, 25 Atk, 15 Def, regains 5 HP every turn; HP is capped at 120 HP), and 
-* goblin (110 HP, 15 Atk, 20 Def, steals 5 gold from every slain enemy). 
+The default player character race is a shade that has starting stats (125 HP, 25 Atk, 25 Def). However, players have the option of choosing an alternate (but no less heroic) race:
 
-Max HP for all races is the starting HP, except for vampire which has no max.
+| Race       | HP           | Atk  | Def |Special Effects|
+| ------------- |-------------| -----|-----| ----|
+|Drow| 150 |25|15| All potions have their effect magnified by 1.5|
+|Vampire | 50 | 25 |25|Gains 5 HP every successful attack and has no maximum HP
+|Troll | 120  |  25  |15|Regains 5 HP every turn; HP is capped at 120 HP
+|Goblin|110    | 15 |20|Steals 5 gold from every slain enemy
+
+Max HP for all races is the starting HP, except for vampire which ha1s no max.
 In our game board, the player character is always denoted by the ‘@’ symbol.
 
 
@@ -65,7 +71,7 @@ Enemies (except dragons, who are stationary) move randomly 1 floor tile at a tim
 Enemies are denoted on the map as follows: (H)uman, d(W)arf, (E)lf, (O)rc, (M)erchant, (D)ragon, Half(L)ing.
 
 ### 2.3 Items
-### 2.3.1 Potions
+#### 2.3.1 Potions
 In the game of CC3k, there is only one type of usable item: a potion. Potions are of two types: positive and negative. Potions can provide the player character with positive and negative bonuses as outlined below. Regardless of the potion itself, all potions are denoted on the map with a P. A player may not hold any potions. Accordingly, a potion cannot be used unless a player is standing within a 1 block radius of it.
 
 The effects of a particular potion are not known until it is used for the first time, e.g. the player character will not know what a potion does until they use it for the first time in a session. However, they will only learn about the effects of that particular potion. Other potions will not have their effects revealed. The exception is for potions purchased from the Merchant7, which should have have their abilities displayed.
@@ -85,7 +91,7 @@ The effects of RH and PH are permanent while the effects of all other potions ar
 Note that the PC’s Atk and Def can never drop below 0.
 
 
-### 2.3.2 Treasure
+#### 2.3.2 Treasure
 Treasure in CC3k consists only of gold. Gold can be in several types of piles: small (value 1), normal (value 2), merchant hoard (value 4), and dragon hoard (value 6). Recall, a dragon must always protect a dragon hoard whenever it randomly spawns. A dragon hoard can only be picked up once the dragon guarding it has been slain. Gold, regardless of type, is denoted by ‘G’ on the map.
 
 A merchant hoard is dropped upon the death of a merchant. Gold dropped by a merchant (merchant hoard, value 4) or a human (2 normal piles, value 2x2=4) is picked up only when the PC walks over it.
