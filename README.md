@@ -94,7 +94,7 @@ With the exception of dragons, enemies have the following probability distributi
 
 20 enemies are spawned per floor (this number does not include dragons). Every chamber is equally likely to spawn any particular monster (similarly for floor tiles).
 
-The generation happens in the following order: player character location, stairway location, potions, gold, enemies. This is to allow us to more easily evaluate that your random generation is correctly implemented.
+The generation happens in the following order: player character location, stairway location, potions, gold, enemies. 
 
 Note that multiple objects (enemies, gold, and potions) cannot occupy the same cell on the game board. That is, no two objects can ever occupy the same space. The one exception to this is the case of gold. Typically, when a player character walks over gold, it is picked up. The exception to this is if the gold is associated with a still alive dragon; in this case, the player simply walks over the gold, without picking it.
 
@@ -109,7 +109,8 @@ Combat is resolved as follows: Enemies will auto-attack players given the previo
 Damage is calculated as follows: Damage(Def ender) = ceiling((100/(100+Def (Def ender)))∗Atk(Attacker)), where Attacker specifies the attacking character (enemy or PC) and defender specifies the character being attacked. Thus, in a single round a character can be both an attacker and a defender.
 
 ## 3. Display
-The display of CC3k is relatively simple, Figure 1 depicts an empty board. Walls are denoted by ‘|’ and ‘−’, doorways by ‘+’, and passages by ‘#’. Floor tiles that can be walked upon are denoted by ‘.’. Chambers are denoted by the smaller polygons inside the larger rectangle. The player character can only ever occupy a passage block, doorway block, or a floor tile inside a chamber. The player character can see in all chambers simultaneously, e.g. through walls or doors10. Figures 2, 3, 4, 5, depict various board states. Note that Figure 1 represents a completely empty game board and is meant to act as a reference of what the game board would look like before any generation occurs.
+The display of CC3k is relatively simple, Figure 1 depicts an empty board. Walls are denoted by ‘|’ and ‘−’, doorways by ‘+’, and passages by ‘#’. Floor tiles that can be walked upon are denoted by ‘.’. Chambers are denoted by the smaller polygons inside the larger rectangle. The player character can only ever occupy a passage block, doorway block, or a floor tile inside a chamber. The player character can see in all chambers simultaneously.
+
 
 ## 4. Command Interpreter
 Initially, the game will demand the player enter one of the specified races or quit. Entering ‘q’ or EOF (e.g. Ctrl-D) at the race prompt will cause the program to terminate. Supplying a valid race selection (below) will start that game using that race. Other values will be ignored.
@@ -133,18 +134,7 @@ A game session ends in one of the following ways: the player character reaches t
 A player’s score is only generated in the first of above two cases. Score is determined by the amount of gold they have collected in their current character’s life time (except for shades who have a 50% increase to their score).
 
 ## 6. Command Line options
-Your program should have the ability to process an optional single command line argument: the name of a file that specifies the layout of each of the 5 floors. This is specified by giving the exact floor layout as is presented to the player. Essentially, any diagram presented in this document (minus the text information in the last 5 rows). Note that potions and piles of gold will be denoted by numbers (outlined below) but should be converted to the appropriate character when displayed to the player.
+The program should have the ability to process an optional single command line argument: the name of a file that specifies the layout of each of the 5 floors. This is specified by giving the exact floor layout as is presented to the player. Essentially, any diagram presented in this document (minus the text information in the last 5 rows). Note that potions and piles of gold will be denoted by numbers (outlined below) but should be converted to the appropriate character when displayed to the player.
 
-Thetranslationofnumberstoitemsisasfollows: 0-RH,1-BA,2-BD,3-PH,4-WA,5-WD,6- normal gold pile, 7 - small hoard, 8 - merchant hoard, 9 - dragon hoard.
+The translation of numbers to items is as follows: 0-RH,1-BA,2-BD,3-PH,4-WA,5-WD,6- normal gold pile, 7 - small hoard, 8 - merchant hoard, 9 - dragon hoard.
 
-You may find it useful to have a second optional argument that represents a seed for your random number generation (so that you can have reproducible results). This is not required.
-
-## 7. When all else fails...
-This is a relatively complex project with many components and large amounts of random generation. Ac- cordingly, if you find yourself running out of time or having trouble here’s our suggestion for priorities:
-
-* Reading in (from a file) and printing a floor. Implementing this will make your demo go much faster
-* Create general purpose player character, enemies, and items (e.g. No special types) 
-* Get movement and interaction working (combat, item use, etc) for these generalized versions. • Introduce the different races and enemies.
-* Introduce the different types of items.
-
-Accomplishing the first three points should reward you with at least 50% (assuming you have used object- oriented principles to get that far). That is, you will get a higher mark for submitting something that runs but not does implement all the requirements than submitting something that attempts to implement all the requirements but doesn’t run.
