@@ -41,10 +41,10 @@ The default player character race is a shade that has starting stats (125 HP, 25
 
 | Race       | HP           | Atk  | Def |Special Effects|
 | ------------- |-------------| -----|-----| ----|
-|Drow| 150 |25|15| All potions have their effect magnified by 1.5|
-|Vampire | 50 | 25 |25|Gains 5 HP every successful attack and has no maximum HP
-|Troll | 120  |  25  |15|Regains 5 HP every turn; HP is capped at 120 HP
-|Goblin|110    | 15 |20|Steals 5 gold from every slain enemy
+|Drow| 150 |25|15| All potions have their effect magnified by 1.5.|
+|Vampire | 50 | 25 |25|Gains 5 HP every successful attack and has no maximum HP.
+|Troll | 120  |  25  |15|Regains 5 HP every turn; HP is capped at 120 HP.
+|Goblin|110    | 15 |20|Steals 5 gold from every slain enemy.
 
 Max HP for all races is the starting HP, except for vampire which ha1s no max.
 
@@ -58,19 +58,14 @@ Enemies can be one of:
 
 | Race       | HP           | Atk  | Def |Special Effects|
 | ------------- |-------------| -----|-----| ----|
-|Human| 140 |20|20|Drops 2 normal piles of gold|
-|Dwarf | 100 | 20 |30|Vampires are allergic to dwarves and lose 5HP rather than gain|
-|Elf | 140  |  30  |10|Gets two attacks against every race except drow|
-|Orcs|180    | 30 |25|Does 50% more damage to goblins|
-|Merchant|30    | 70 |5|
-|Dargon|150    | 20 |20|Always guards a treasure hoard|
+|Human| 140 |20|20|Drops 2 normal piles of gold.|
+|Dwarf | 100 | 20 |30|Vampires are allergic to dwarves and lose 5HP rather than gain.|
+|Elf | 140  |  30  |10|Gets two attacks against every race except drow.|
+|Orcs|180    | 30 |25|Does 50% more damage to goblins.|
+|Merchant|30    | 70 |5|By default, merchants are neutral to all parties. However, merchants can be attacked and slain by the player character. Attacking or slaying a Merchant will cause every Merchant from that point forward to become hostile to the player character for the rest of the game even on future floors (and will attack them if they pass within a one block radius.
+|Dargon|150    | 20 |20|Always guards a treasure hoard. Always spawn in a one block radius of its dragon hoard(see Treasure). That is, if a dragon hoard is spawned then a dragon is spawned.|
 |Halfling|100    | 15 |20|has a 50% chance to cause the player character to miss in combat, i.e. takes priority over player character’s ability to never miss|
 
-
-
-By default, merchants are neutral to all parties. However, merchants can be attacked and slain by the player character. Attacking or slaying a Merchant will cause every Merchant from that point forward to become hostile to the player character for the rest of the game even on future floors (and will attack them if they pass within a one block radius).
-
-Dragons always spawn in a one block radius of its dragon hoard(see Treasure). That is, if a dragon hoard is spawned then a dragon is spawned.
 Upon their demise, any enemy that is not a dragon, human, or merchant will drop either a small pile or normal pile of gold (discussed below). This gold is immediately added to the player character’s total.
 
 Enemies (except dragons, who are stationary) move randomly 1 floor tile at a time, assuming the floor tile is unoccupied (see Section 3 for floor tile description). An enemy can never leave the room it was spawned (created) in. Note that enemies should be moved in a line-by-line fashion. That is, starting at the leftmost enemy, move all enemies on that row and then move to the next row starting with the leftmost. Any particular enemy should only be moved once per player action (e.g. moving to a line that has not been processed does not grant an extra move). However, should the player character be within a 1 block radius of an enemy then the enemy will always attack the player character.
