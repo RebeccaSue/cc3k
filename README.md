@@ -49,14 +49,14 @@ In the game of CC3k, there is only one type of usable item: a potion. Potions ar
 The effects of a particular potion are not known until it is used for the first time, e.g. the player character will not know what a potion does until they use it for the first time in a session. However, they will only learn about the effects of that particular potion. Other potions will not have their effects revealed. The exception is for potions purchased from the Merchant7, which should have have their abilities displayed.
 
 **Positive Potions**:
-• Restore health (RH): restore up to 10 HP (cannot exceed maximum prescribed by race)
-• Boost Atk (BA): increase Atk by 5
-• Boost Def (BD): increase Def by 5
+* Restore health (RH): restore up to 10 HP (cannot exceed maximum prescribed by race)
+* Boost Atk (BA): increase Atk by 5
+* Boost Def (BD): increase Def by 5
 
 **Negative Potions**:
-• Poison health (PH): lose up to 10 HP (cannot fall below 0 HP) 
-• Wound Atk (WA): decrease Atk by 5
-• Wound Def (WD): decrease Def by 5
+* Poison health (PH): lose up to 10 HP (cannot fall below 0 HP) 
+* Wound Atk (WA): decrease Atk by 5
+* Wound Def (WD): decrease Def by 5
 
 The effects of RH and PH are permanent while the effects of all other potions are limited to the floor they are used on. For example, using a BA potion will only boost the player character’s Atk until the beginning of the next floor.
 
@@ -77,11 +77,11 @@ The player character should spawn randomly in a chamber (every chamber is equall
 We might like to have gold spawn more or less frequently as the game gets more difficult. However, to again simplify design the spawn rate of gold is 5/8 chance of normal, 1/8 dragon hoard, 1/4 small hoard. Chambers are equally likely (as are floor tiles in any particular chamber) to spawn gold. 10 piles of gold are spawned on every floor.
 
 With the exception of dragons, enemies have the following probability distribution of being spawned:
-• Human: 2/9
-• Dwarf: 3/18
-• Halfling: 5/18 • Elf: 1/9
-• Orc: 1/9
-• Merchant: 1/9
+* Human: 2/9
+* Dwarf: 3/18
+* Halfling: 5/18 • Elf: 1/9
+* Orc: 1/9
+* Merchant: 1/9
 
 20 enemies are spawned per floor (this number does not include dragons). Every chamber is equally likely to spawn any particular monster (similarly for floor tiles).
 
@@ -107,13 +107,13 @@ Initially, the game will demand the player enter one of the specified races or q
 Play will continue in the specified way until the player restarts, reaches the end of floor 5, the PC dies, or the player quits. If the player reaches the end of the game or their character is slain, the game should give them the option of playing again or quitting.
 
 The following commands can be supplied to your command interpreter:
-• **no,so,ea,we,ne,nw,se,sw**: moves the player character one block in the appropriate cardinal direction.
-• **u <direction>**: uses the potion indicated by the direction (e.g. no, so, ea).
-• **a <direction>**: attacks the enemy in the specified direction, if the monster is in the immediately specified block (e.g. must be one block north of the @).
-• **s, d, v, g, t**: specifies the race the player wishes to be when starting a game.
-• **f**: stops enemies from moving until this key is pressed again.
-• **r**: restarts the game. All stats, inventory, and gold are reset. A new race should be selected.
-• **q**: allows the player to admit defeat and exit the game.
+* **no,so,ea,we,ne,nw,se,sw**: moves the player character one block in the appropriate cardinal direction.
+* **u <direction>**: uses the potion indicated by the direction (e.g. no, so, ea).
+* **a <direction>**: attacks the enemy in the specified direction, if the monster is in the immediately specified block (e.g. must be one block north of the @).
+* **s, d, v, g, t**: specifies the race the player wishes to be when starting a game.
+* **f**: stops enemies from moving until this key is pressed again.
+* **r**: restarts the game. All stats, inventory, and gold are reset. A new race should be selected.
+* **q**: allows the player to admit defeat and exit the game.
 
 Note that the board should be redrawn as appropriate every time a command is entered.
 
@@ -133,9 +133,9 @@ You may find it useful to have a second optional argument that represents a seed
 ##7. When all else fails...
 This is a relatively complex project with many components and large amounts of random generation. Ac- cordingly, if you find yourself running out of time or having trouble here’s our suggestion for priorities:
 
-• Reading in (from a file) and printing a floor. Implementing this will make your demo go much faster
-• Create general purpose player character, enemies, and items (e.g. No special types) 
-• Get movement and interaction working (combat, item use, etc) for these generalized versions. • Introduce the different races and enemies.
-• Introduce the different types of items.
+* Reading in (from a file) and printing a floor. Implementing this will make your demo go much faster
+* Create general purpose player character, enemies, and items (e.g. No special types) 
+* Get movement and interaction working (combat, item use, etc) for these generalized versions. • Introduce the different races and enemies.
+* Introduce the different types of items.
 
 Accomplishing the first three points should reward you with at least 50% (assuming you have used object- oriented principles to get that far). That is, you will get a higher mark for submitting something that runs but not does implement all the requirements than submitting something that attempts to implement all the requirements but doesn’t run.
