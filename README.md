@@ -11,7 +11,7 @@ CC3k differs from other rogue-likes in a significant way: it does not update the
 
 ### 1.1 Some Definitions
 
-Definition 1: A **character** is a person/animal/thing in the game of CC3k. This can be either the player character (PC), who is controlled by the player of the game, or non-playable characters, who are strictly enemies in CC3k.
+Definition 1: A **character** is a person/animal/thing in the game of CC3k. This can be either the player character, who is controlled by the player of the game, or non-playable characters, who are strictly enemies in CC3k.
 
 Definition 2: An **item** is something the player character can pick up or use. In CC3k, this is either gold or potions. Potions offer potentially positive and negative effects to the player character.
 
@@ -96,7 +96,7 @@ The effects of a particular potion are not known until it is used for the first 
 
 The effects of RH and PH are permanent while the effects of all other potions are limited to the floor they are used on. For example, using a BA potion will only boost the player character’s Atk until the beginning of the next floor.
 
-Note that the PC’s Atk and Def can never drop below 0.
+Note that the player character's Atk and Def can never drop below 0.
 
 
 #### 2.3.2 Treasure
@@ -111,14 +111,15 @@ Treasure in CC3k consists only of gold. Gold can be in several types of piles:
 
 Gold, regardless of type, is denoted by ‘G’ on the map.
 
-Gold dropped by a merchant (merchant hoard, value 4) or a human (2 normal piles, value 2x2=4) is picked up only when the PC walks over it.
+Gold dropped by a merchant (merchant hoard, value 4) or a human (2 normal piles, value 2x2=4) is picked up only when the  player character walks over it.
 
 ### 2.4 Floors
 Levels are generated to consist of the 5 chambers connected in the manner outlined in Figure 1. It would be more interesting to have randomly connected randomly generated chambers but that is more complicated than the time frame allows.
 
-The player character should spawn randomly in a chamber (every chamber is equally likely) but it should never be the case that the player spawns in the chamber with the stairs going down to the next level. Stairs are denoted by ‘\’. Note that the stairway and player character may be spawned with equal probability on any floor tile in a chamber. That is, a larger chamber should be no more likely to spawn the PC/stairs than a smaller chamber, where any floor tile in the selected chamber is equally likely to spawn the PC/stairs.
+The player character should spawn randomly in a chamber (every chamber is equally likely) but it should never be the case that the player spawns in the chamber with the stairs going down to the next level. Stairs are denoted by ‘\’. Note that the stairway and player character may be spawned with equal probability on any floor tile in a chamber. That is, a larger chamber should be no more likely to spawn the player character/stairs than a smaller chamber, where any floor tile in the selected chamber is equally likely to spawn the player character/stairs.
 
 10 potions are spawned on each floor. A potion’s type is chosen at random, with each type having equal (1/6) probability. The chamber the potion spawns in is also chosen at random, with each room having equal (1/5) probability. Each square in the chamber a potion spawns in has an equal chance of containing the potion. Note that this means in particular that small rooms are just as likely to spawn potions as large rooms.
+
 We might like to have gold spawn more or less frequently as the game gets more difficult. However, to again simplify design the spawn rate of gold is 5/8 chance of normal, 1/8 dragon hoard, 1/4 small hoard. Chambers are equally likely (as are floor tiles in any particular chamber) to spawn gold. 10 piles of gold are spawned on every floor.
 
 With the exception of dragons, enemies have the following probability distribution of being spawned:
@@ -138,15 +139,15 @@ The generation happens in the following order: player character location, stairw
 
 Note that multiple objects (enemies, gold, and potions) cannot occupy the same cell on the game board. That is, no two objects can ever occupy the same space. The one exception to this is the case of gold. Typically, when a player character walks over gold, it is picked up. The exception to this is if the gold is associated with a still alive dragon; in this case, the player simply walks over the gold, without picking it.
 
-When the PC attempts to move on to a stairway, the next level is instead generated and displayed, with the PC spawning in a random position on the new level.
+When the player character attempts to move on to a stairway, the next level is instead generated and displayed, with the player character spawning in a random position on the new level.
 Items and enemies should only ever spawn on a floor tile and never in a doorway, passage, or the stairs leading down to the next floor.
 
 ### 2.5 Combat
 
 By default, all enemies except for Merchants and Dragons are hostile to the player character. If the player character enters within a 1 block radius of any hostile enemy, they will attempt to attack the player character (even before the player character has had a chance to attack). Dragons are considered hostile when the player is next to (read: in the 1 block radius of) its dragon hoard or itself, and will use their fire breath to defend its hoard (i.e. will attack the enemy). This means that a Dragon might attack even if the player is not next to the Dragon, but because it is next to a dragon hoard. If the player character is not within a 1 block radius of the enemy then it will resume random movement (as previously described). Recall that Merchants can become hostile when one is attacked/slain by the player character.
 
-Combat is resolved as follows: Enemies will auto-attack players given the previously specified criteria, however, there is a 50% chance their attack misses. The player character has the option of attacking any of the 8 squares that are within a 1 block radius of them. The PC never misses (except when attacking a halfling as discussed earlier). Recall, that the PC has initiative and always attacks first.
-Damage is calculated as follows: `Damage(Def ender) = ceiling((100/(100+Def (Def ender)))∗Atk(Attacker))`, where Attacker specifies the attacking character (enemy or PC) and defender specifies the character being attacked. Thus, in a single round a character can be both an attacker and a defender.
+Combat is resolved as follows: Enemies will auto-attack players given the previously specified criteria, however, there is a 50% chance their attack misses. The player character has the option of attacking any of the 8 squares that are within a 1 block radius of them. The player character never misses (except when attacking a halfling as discussed earlier). Recall, that the player character has initiative and always attacks first.
+Damage is calculated as follows: `Damage(Def ender) = ceiling((100/(100+Def (Def ender)))∗Atk(Attacker))`, where Attacker specifies the attacking character (enemy or player character) and defender specifies the character being attacked. Thus, in a single round a character can be both an attacker and a defender.
 
 ## 3. Display
 Walls are denoted by ‘|’ and ‘−’, doorways by ‘+’, and passages by ‘#’. Floor tiles that can be walked upon are denoted by ‘.’. Chambers are denoted by the smaller polygons inside the larger rectangle. The player character can only ever occupy a passage block, doorway block, or a floor tile inside a chamber. The player character can see in all chambers simultaneously.
@@ -159,7 +160,7 @@ Walls are denoted by ‘|’ and ‘−’, doorways by ‘+’, and passages by
 
 ## 4. Command Interpreter
 Initially, the game will demand the player enter one of the specified races or quit. Entering ‘q’ or EOF (e.g. Ctrl-D) at the race prompt will cause the program to terminate. Supplying a valid race selection (below) will start that game using that race. Other values will be ignored.
-Play will continue in the specified way until the player restarts, reaches the end of floor 5, the PC dies, or the player quits. If the player reaches the end of the game or their character is slain, the game should give them the option of playing again or quitting.
+Play will continue in the specified way until the player restarts, reaches the end of floor 5, the player character dies, or the player quits. If the player reaches the end of the game or their character is slain, the game should give them the option of playing again or quitting.
 
 The following commands can be supplied to your command interpreter:
 * **no,so,ea,we,ne,nw,se,sw**: moves the player character one block in the appropriate cardinal direction.
