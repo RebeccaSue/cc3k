@@ -46,7 +46,7 @@ The major components of the system are as follows:
 |Troll | 120  |  25  |15|Regains 5 HP every turn; HP is capped at 120 HP.
 |Goblin|110    | 15 |20|Steals 5 gold from every slain enemy.
 
-Max HP for all races is the starting HP, except for vampire which ha1s no max.
+Max HP for all races is the starting HP, except for vampire which has no max.
 
 In our game board, the player character is always denoted by the ‘@’ symbol.
 
@@ -100,9 +100,18 @@ Note that the PC’s Atk and Def can never drop below 0.
 
 
 #### 2.3.2 Treasure
-Treasure in CC3k consists only of gold. Gold can be in several types of piles: small (value 1), normal (value 2), merchant hoard (value 4), and dragon hoard (value 6). Recall, a dragon must always protect a dragon hoard whenever it randomly spawns. A dragon hoard can only be picked up once the dragon guarding it has been slain. Gold, regardless of type, is denoted by ‘G’ on the map.
+Treasure in CC3k consists only of gold. Gold can be in several types of piles: 
 
-A merchant hoard is dropped upon the death of a merchant. Gold dropped by a merchant (merchant hoard, value 4) or a human (2 normal piles, value 2x2=4) is picked up only when the PC walks over it.
+| Gold | Value| Special|
+| --- |---| ---|
+|Small|1|
+|Normal|2|
+|Merchan Hoard|4|A merchant hoard is dropped upon the death of a merchant. |
+|Dragon Hoard|6|A dragon must always protect a dragon hoard whenever it randomly spawns. A dragon hoard can only be picked up once the dragon guarding it has been slain. |
+
+Gold, regardless of type, is denoted by ‘G’ on the map.
+
+Gold dropped by a merchant (merchant hoard, value 4) or a human (2 normal piles, value 2x2=4) is picked up only when the PC walks over it.
 
 ### 2.4 Floors
 Levels are generated to consist of the 5 chambers connected in the manner outlined in Figure 1. It would be more interesting to have randomly connected randomly generated chambers but that is more complicated than the time frame allows.
@@ -113,11 +122,15 @@ The player character should spawn randomly in a chamber (every chamber is equall
 We might like to have gold spawn more or less frequently as the game gets more difficult. However, to again simplify design the spawn rate of gold is 5/8 chance of normal, 1/8 dragon hoard, 1/4 small hoard. Chambers are equally likely (as are floor tiles in any particular chamber) to spawn gold. 10 piles of gold are spawned on every floor.
 
 With the exception of dragons, enemies have the following probability distribution of being spawned:
-* Human: 2/9
-* Dwarf: 3/18
-* Halfling: 5/18 • Elf: 1/9
-* Orc: 1/9
-* Merchant: 1/9
+
+|Race|Probability|
+| --- | ---|
+|Human| 2/9|
+|Dwarf| 3/18|
+| Halfling| 5/18| 
+| Elf| 1/9|
+| Orc| 1/9|
+| Merchant| 1/9|
 
 20 enemies are spawned per floor (this number does not include dragons). Every chamber is equally likely to spawn any particular monster (similarly for floor tiles).
 
