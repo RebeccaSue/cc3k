@@ -37,10 +37,10 @@ Definition 10: A **1 block radius** denotes the 8 cells adjacent to the characte
 The major components of the system are as follows:
 
 ### 2.1 Player Character
-The default player character race is a shade that has starting stats (125 HP, 25 Atk, 25 Def). However, players have the option of choosing an alternate (but no less heroic) race:
 
 | Race       | HP           | Atk  | Def |Special Effects|
 | ------------- |-------------| -----|-----| ----|
+|Shade|125|25|25| Default character race.| 
 |Drow| 150 |25|15| All potions have their effect magnified by 1.5.|
 |Vampire | 50 | 25 |25|Gains 5 HP every successful attack and has no maximum HP.
 |Troll | 120  |  25  |15|Regains 5 HP every turn; HP is capped at 120 HP.
@@ -133,7 +133,7 @@ Items and enemies should only ever spawn on a floor tile and never in a doorway,
 By default, all enemies except for Merchants and Dragons are hostile to the player character. If the player character enters within a 1 block radius of any hostile enemy, they will attempt to attack the player character (even before the player character has had a chance to attack). Dragons are considered hostile when the player is next to (read: in the 1 block radius of) its dragon hoard or itself, and will use their fire breath to defend its hoard (i.e. will attack the enemy). This means that a Dragon might attack even if the player is not next to the Dragon, but because it is next to a dragon hoard. If the player character is not within a 1 block radius of the enemy then it will resume random movement (as previously described). Recall that Merchants can become hostile when one is attacked/slain by the player character.
 
 Combat is resolved as follows: Enemies will auto-attack players given the previously specified criteria, however, there is a 50% chance their attack misses. The player character has the option of attacking any of the 8 squares that are within a 1 block radius of them. The PC never misses (except when attacking a halfling as discussed earlier). Recall, that the PC has initiative and always attacks first.
-Damage is calculated as follows: Damage(Def ender) = ceiling((100/(100+Def (Def ender)))∗Atk(Attacker)), where Attacker specifies the attacking character (enemy or PC) and defender specifies the character being attacked. Thus, in a single round a character can be both an attacker and a defender.
+Damage is calculated as follows: `Damage(Def ender) = ceiling((100/(100+Def (Def ender)))∗Atk(Attacker))`, where Attacker specifies the attacking character (enemy or PC) and defender specifies the character being attacked. Thus, in a single round a character can be both an attacker and a defender.
 
 ## 3. Display
 Walls are denoted by ‘|’ and ‘−’, doorways by ‘+’, and passages by ‘#’. Floor tiles that can be walked upon are denoted by ‘.’. Chambers are denoted by the smaller polygons inside the larger rectangle. The player character can only ever occupy a passage block, doorway block, or a floor tile inside a chamber. The player character can see in all chambers simultaneously.
