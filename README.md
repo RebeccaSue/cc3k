@@ -1,6 +1,8 @@
 # ChamberCrawler3000
  The game of ChamberCrawler 3000 (CC3K) is a simplified [rogue-like](https://en.wikipedia.org/wiki/Rogue). 
 
+This is a remastered version of the CS246 final project of University of Waterloo. 
+
 
 ## 1. Introduction
 
@@ -190,5 +192,30 @@ A player’s score is only generated in the first of above two cases. Score is d
 ## 6. Command Line options
 The program should have the ability to process an optional single command line argument: the name of a file that specifies the layout of each of the 5 floors. This is specified by giving the exact floor layout as is presented to the player. Essentially, any diagram presented in this document (minus the text information in the last 5 rows). Note that potions and piles of gold will be denoted by numbers (outlined below) but should be converted to the appropriate character when displayed to the player.
 
-The translation of numbers to items is as follows: 0-RH, 1-BA, 2-BD, 3-PH, 4-WA, 5-WD, 6-normal gold pile, 7-small hoard, 8-merchant hoard, 9-dragon hoard.
+|Number|Items|
+| --- | ---|
+|0|RH|
+|1|BA|
+|2|BD|
+|3|PH|
+|4|WA|
+|5|WD|
+|6|Normal Gold Pile|
+|7|Small Hoard|
+|8|Merchant Hoard|
+|9|Dragon hoard|
 
+
+
+## 7. Features Will be Added in the Future
+
+The following is a list of possible features that could be developed.
+
+* Use a curses library to make this like an actual game with WASD controls.
+* Introduce an inventory system so that the player character can hold multiple potions.
+* Expand the inventory and combat systems to make use of new types of treasure (e.g. weapons and armour).
+* Give enemies some intelligence. Make them pursue the player character.
+* Give the Merchant the ability to sell (and maybe buy from the player character).
+* Add a class system to the game (e.g. Knight, Monk, etc). May require extensive reworking for magic users.
+* Add more player character races.
+* Add more enemies.
