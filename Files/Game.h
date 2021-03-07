@@ -1,41 +1,36 @@
+#ifndef GAME_H
+#define GAME_H
 
-
-
-
-
-
-#include<iostream>
-#include<string>
+#include <cstdlib>
+#include <iostream>
+#include <string>
 
 #include "Floor.h"
 #include "Player.h"
 
+// Game: acts as command interpreter
+// initializes Player and Floor
+// reprints state of Game (Floor) every time a command is passed from main
 class Game {
+	std::string floorFile; 
+	std::string race;
+	Floor* theFloor; // unique_ptr?
+	Player* thePlayer; // unique_ptr?
+	std::string action;
 
-	string map; 
-	string main_character; 
-	string action; 
-
-	public: 
-		Game(string map, string status);
-		~Game();
-
-		// start() generates the map 
-		void start(); 
-
-		// print() print the map to the screen
-		void print(); 
-
-		// move_main_character(string) consumes a command string and move the main character
-		void move_main_character(string); 
-		
-		// use_potion(string) consumes a potion string and reflects the effects on the main character
-		void use_potion(string);
-
-		// attack_enemy(string) consumes a genre of monster and change the main_character
-		void attack_enemy(string);
-		void freeze();
-		void restart();
-		void quit();
+public:
+	Game(std::string floorFile, std::string race);
+	~Game();
+	void print();
+	void initPlayer(); // initialzies thePlayer pointer to a Player of corresponding race
 	
+	// Player movement
+	void move(std::string direction); // converts string direction to coordinates to Floor
+	void usePotion();
+	void attackEnemy();
+	void freeze();
+	void restart();
+	void quit();
 };
+
+#endif
